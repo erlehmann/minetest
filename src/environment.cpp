@@ -747,6 +747,12 @@ static void getMob_dungeon_master(Settings &properties)
 	properties.setBool("mindless_rage", myrand_range(0,100)==0);
 }
 
+static void getMob_lurker(Settings &properties)
+{
+	properties.setFloat("hp", 1);
+	properties.set("looks", "lurker");
+}
+
 void ServerEnvironment::step(float dtime)
 {
 	DSTACK(__FUNCTION_NAME);

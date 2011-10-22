@@ -1063,6 +1063,8 @@ void MobV2CAO::step(float dtime, ClientEnvironment *env)
 		bill->setTCoords(1, v2f(txs*(1+col), tys*(0+row)));
 		bill->setTCoords(2, v2f(txs*(0+col), tys*(0+row)));
 		bill->setTCoords(3, v2f(txs*(0+col), tys*(1+row)));
+	} else if(m_sprite_type == "static"){
+		// pass
 	} else {
 		infostream<<"MobV2CAO::step(): Unknown sprite type \""
 				<<m_sprite_type<<"\""<<std::endl;
@@ -1239,6 +1241,24 @@ void MobV2CAO::setLooks(const std::string &looks)
 		m_sprite_y = 0.85 * BS;
 		selection_size = v2f(0.4, 2.6) * BS;
 		selection_y = -0.4 * BS;
+	}
+	else if(looks == "lurker"){
+		int t = myrand_range(1, 3);
+		if(t==1) {
+			m_texture_name = "lurker-blue.png";
+		}
+		else if(t==2)
+		{
+			m_texture_name = "lurker-green.png";
+		}
+		else if(t==3)
+		{
+			m_texture_name = "lurker-red.png";
+		}
+		m_sprite_type = "static";
+		m_sprite_size = v2f(1, 2) * BS;
+		m_sprite_y = 0.5 * BS;
+		selection_y = 0.5 * BS;
 	}
 	else if(looks == "fireball"){
 		m_texture_name = "fireball.png";
