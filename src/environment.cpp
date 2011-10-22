@@ -1204,7 +1204,7 @@ void ServerEnvironment::step(float dtime)
 	/*
 		TEST CODE
 	*/
-#if 0
+#if 1
 	m_random_spawn_timer -= dtime;
 	if(m_random_spawn_timer < 0)
 	{
@@ -1244,7 +1244,7 @@ void ServerEnvironment::step(float dtime)
 				<<"("<<pos.X<<","<<pos.Y<<","<<pos.Z<<")"<<std::endl;
 		
 		Settings properties;
-		getMob_dungeon_master(properties);
+		getMob_lurker(properties);
 		ServerActiveObject *obj = new MobV2SAO(this, 0, pos, &properties);
 		addActiveObject(obj);
 	}
