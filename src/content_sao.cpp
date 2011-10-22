@@ -1431,7 +1431,7 @@ void MobV2SAO::setPropertyDefaults()
 	m_properties->setDefault("hp", "0");
 	m_properties->setDefault("die_age", "-1");
 	m_properties->setDefault("size", "(1,2)");
-	m_properties->setDefault("shoot_type", "fireball");
+	m_properties->setDefault("shoot_type", "false");
 	m_properties->setDefault("shoot_y", "0");
 	m_properties->setDefault("mindless_rage", "false");
 }
